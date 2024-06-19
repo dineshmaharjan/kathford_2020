@@ -6,4 +6,17 @@
     <string name="login_to_continue">Login to continue using the app</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
+    <string name="signup">Signup</string>
+    <string name="full_name">Full name</string>
+    <string name="address">Address</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="others">Others</string>
+    <string name="terms_and_condition">Terms and Condition</string>
+
+    <string-array name="countries">
+        <item>Nepal</item>
+        <item>India</item>
+    </string-array>
 </resources>
