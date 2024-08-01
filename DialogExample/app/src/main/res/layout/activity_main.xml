@@ -4,6 +4,21 @@
     android:layout_height="match_parent"
     android:padding="24dp">
 
+    <Button
+        android:id="@+id/dialogFragmentButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show Dialog Fragment"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/customDialogButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialogFragmentButton"
+        android:text="Custom Dialog"
+        android:textAllCaps="false" />
+
 
     <Button
         android:id="@+id/logoutButton"
