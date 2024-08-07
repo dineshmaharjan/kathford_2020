@@ -6,13 +6,18 @@ public class Movie {
     private String releaseDate;
     private String imageUrl;
 
-
-    private void setTitle(String title){
+    public Movie(String title, String releaseDate, String imageUrl) {
         this.title = title;
+        this.releaseDate = releaseDate;
+        this.imageUrl = imageUrl;
     }
 
-    private String getTitle(){
-        return this.title;
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getReleaseDate() {
