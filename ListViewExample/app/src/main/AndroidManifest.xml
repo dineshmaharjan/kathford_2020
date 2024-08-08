@@ -24,6 +24,8 @@
 
         <activity android:name=".MainActivity"/>
         <activity android:name=".MovieActivity"/>
+        <activity android:name=".SimpleGridViewActivity"/>
+        <activity android:name=".MovieGridViewActivity"/>
     </application>
 
 </manifest>

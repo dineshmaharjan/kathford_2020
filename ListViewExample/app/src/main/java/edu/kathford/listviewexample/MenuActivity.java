@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MenuActivity extends AppCompatActivity {
 
-    private Button simpleListViewButton, customListViewButton;
+    private Button simpleListViewButton, customListViewButton, simpleGridViewButton, customGridViewButton;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -21,6 +21,8 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
         simpleListViewButton = findViewById(R.id.simpleListViewButton);
         customListViewButton = findViewById(R.id.customListViewButton);
+        simpleGridViewButton = findViewById(R.id.simpleGridViewButton);
+        customGridViewButton = findViewById(R.id.customGridViewButton);
 
         simpleListViewButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +36,23 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 startActivity(new Intent(MenuActivity.this, MovieActivity.class));
+
+            }
+        });
+
+        simpleGridViewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(MenuActivity.this, SimpleGridViewActivity.class));
+
+            }
+        });
+        customGridViewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(MenuActivity.this, MovieGridViewActivity.class));
 
             }
         });
