@@ -19,9 +19,12 @@ import edu.kathford.listviewexample.model.Movie;
 public class CustomRecyclerViewAdapter extends  RecyclerView.Adapter<CustomRecyclerViewAdapter.CustomViewHolder>{
 
     private ArrayList<Movie> movieArrayList;
+    CustomOnItemClickListener listener;
 
-    public CustomRecyclerViewAdapter(ArrayList<Movie> movieArrayList) {
+    public CustomRecyclerViewAdapter(ArrayList<Movie> movieArrayList,
+                                     CustomOnItemClickListener listener) {
         this.movieArrayList = movieArrayList;
+        this.listener = listener;
     }
 
     @NonNull
@@ -40,6 +43,12 @@ public class CustomRecyclerViewAdapter extends  RecyclerView.Adapter<CustomRecyc
         holder.titleTextView.setText(movie.getTitle());
         holder.releaseDateTextView.setText(movie.getReleaseDate());
         Picasso.get().load(movie.getImageUrl()).into(holder.posterImageView);
+        holder.posterImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onClick(movie);
+            }
+        });
 
     }
 
@@ -57,10 +66,14 @@ public class CustomRecyclerViewAdapter extends  RecyclerView.Adapter<CustomRecyc
 
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
-            posterImageView = itemView.findViewById(R.id.movieImageView);
+            posterImageView = itemView.findViewById(R.id.posterImageView);
             titleTextView = itemView.findViewById(R.id.titleTextView);
             releaseDateTextView = itemView.findViewById(R.id.releaseDate);
         }
+    }
+
+    public interface  CustomOnItemClickListener{
+        void onClick(Movie movie);
     }
 
 
