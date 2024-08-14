@@ -27,15 +27,13 @@ public class RecyclerViewExampleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recyclerview_example);
         recyclerView = findViewById(R.id.recyclerView);
         initMovies();
-        adapter = new CustomRecyclerViewAdapter(movieArrayList,
-                new CustomRecyclerViewAdapter.CustomOnItemClickListener() {
-                    @Override
-                    public void onClick(Movie movie) {
-                        Toast.makeText(RecyclerViewExampleActivity.this,
-                                movie.getTitle(), Toast.LENGTH_SHORT).show();
-
-                    }
-                });
+        adapter = new CustomRecyclerViewAdapter(movieArrayList, new CustomRecyclerViewAdapter.CustomOnItemClickListener() {
+            @Override
+            public void onClick(Movie movie) {
+                Toast.makeText(RecyclerViewExampleActivity.this,
+                        movie.getTitle(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
         LinearLayoutManager layoutManager =new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);

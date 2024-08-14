@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
@@ -16,7 +17,9 @@ import java.util.ArrayList;
 import edu.kathford.listviewexample.R;
 import edu.kathford.listviewexample.model.Movie;
 
-public class CustomRecyclerViewAdapter extends  RecyclerView.Adapter<CustomRecyclerViewAdapter.CustomViewHolder>{
+
+public class CustomRecyclerViewAdapter extends
+        RecyclerView.Adapter<CustomRecyclerViewAdapter.CustomViewHolder>{
 
     private ArrayList<Movie> movieArrayList;
     CustomOnItemClickListener listener;
@@ -30,7 +33,8 @@ public class CustomRecyclerViewAdapter extends  RecyclerView.Adapter<CustomRecyc
     @NonNull
     @Override
     public CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_movie,
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_movie,
                 parent,
                 false);
         return new CustomViewHolder(view);
@@ -40,9 +44,12 @@ public class CustomRecyclerViewAdapter extends  RecyclerView.Adapter<CustomRecyc
     public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
 
         Movie movie = movieArrayList.get(position);
+
         holder.titleTextView.setText(movie.getTitle());
         holder.releaseDateTextView.setText(movie.getReleaseDate());
+
         Picasso.get().load(movie.getImageUrl()).into(holder.posterImageView);
+
         holder.posterImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

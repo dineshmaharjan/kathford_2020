@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
                     StudentModel studentModel = new StudentModel().setFullName(fullName).setAddress(address);
 
                     long rowId = studentDbHelper.insert(studentModel);
+
                     if (rowId != -1) {
                         fullNameEditText.setText(null);
                         addressEditText.setText(null);
